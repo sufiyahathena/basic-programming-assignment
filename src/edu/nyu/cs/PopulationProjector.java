@@ -38,7 +38,23 @@ public class PopulationProjector {
      * @throws Exception Allows us to not worry about Exceptions in this function. Java requires the main functino include this, even if not used.
      */
     public static void main(String[] args) throws Exception {
-        // complete this function to solve the problem
+        System.out.println("Here are the projected population numbers for the next five years:");
+        
+        int currentPop = 332403650; 
+        double secondsInDay = 86400;
+        int count = 0;
+        double birthsInYear = (secondsInDay / 7) * 365;
+        double deathsInYear = (secondsInDay / 13) * 365;
+        double immigrantsInYear = (secondsInDay / 45) * 365;
+        int year = 2023;
+
+        while (count < 5){
+            int newPop = (int)((birthsInYear + immigrantsInYear) - deathsInYear);
+            currentPop += newPop;
+            System.out.println("- Year " + year +": " + currentPop );
+            count++;
+            year++;
+        }
     }
 
 

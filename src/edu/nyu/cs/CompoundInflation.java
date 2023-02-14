@@ -26,6 +26,26 @@ import java.util.Scanner;
     public static void main(String[] args) {
         
         // complete this function to solve the problem
+        System.out.println("Please enter your monthly savings rate: ");
 
+        Scanner scnr = new Scanner(System.in);
+        String response = scnr.nextLine();
+
+        //int save = Integer.parseInt(response);
+        double i = Double.parseDouble(response);
+
+        int saving = (int)Math.round(i);
+
+        //double i = Double.parseDouble(response);
+        // 1-0.008333333333333 = 0.99166666666666666 ; 0.991666666 ** 6 = 0.9510301647
+        //Double total = i*0.9510301647;
+        //int newtotal = total.intValue();
+        //int sixmonths = Math.round(newtotal);
+        Double total = i*0.9510301647;
+        int sixmonths = (int)Math.round(total);
+        
+        System.out.println("If you save $" + saving + " per month with 10% annual inflation, after 6 months, your account will hold an amount equivalent to $" + (sixmonths) + " today.");
+
+        scnr.close();
     }
 }
